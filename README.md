@@ -33,5 +33,3 @@
 
 ### 🛠️ Tech Stack
 SQL Server, Power BI, SQL (CASE, CTE, CAST, RANK, VIEW)
-
-### 👩‍💻 Author: Sherli
