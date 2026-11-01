@@ -1,37 +1,37 @@
-# BankRisk - Loan Risk & Default Intelligence Dashboard
+# 🏦 Bank Loan Risk & Default Analysis
 
-Analyzing 200K Loans to Identify High-Risk Customers & Default Patterns using SQL + Power BI
+> Analyzed 255K loan records to identify default patterns, high-risk customers & loan risk factors using SQL Server & Power BI.
 
-### 📊 Dataset
-- Database: BankRisk
-- Table: Loan_default (200K Records)
-- Columns: Age, Income, CreditScore, LoanAmount, DTIRatio, InterestRate, LoanPurpose, Default
+### 🔑 KPIs
+- **Total Loans:** 255K
+- **Default Rate:** 12% (0.12)
+- **Avg Credit Score:** 574.26
 
-### 🔍 SQL Analysis
-- **Total Default Rate:** Calculated total loans, defaults & default percentage.
-- **Credit Score Band:** Poor <600 (High Risk), Medium 600-700, Good >700 - Poor has highest default.
-- **Income vs Default:** Low <30K, Medium <60K, High >60K - Low income = High risk.
-- **Risky Loan Purpose:** Business loans show highest default rate.
-- **High Risk Filter:** DTIRatio > 0.4 and CreditScore < 650 and Default=1 (Top 100 Customers)
-- **Interest Rate Impact:** Low <10%, Medium <15%, High >15% - High interest = High default.
-- **CoSigner Effect:** HasCoSigner reduces default risk.
-- **View Created:** Risk_Dashboard view with Risk_Category (High/Medium/Low)
+### 🔍 SQL Analysis Done
 
-### 📈 Power BI Dashboard
-- Risk_Category, CreditScore and InterestRate analysis
-- CreditScore by Risk_Category: High 18%, Medium 27%, Low 54%
-- %GT Average of Default by Risk_Category
-- Average of Default by LoanPurpose - Business is highest
+**1. Total Default Analysis**
+- Total Loans, Total Defaults, Default Percentage
 
-### 💡 Key Insights
-- Credit Score < 600 = Most Risky
-- Business Loan = Highest Default Rate  
-- DTI > 0.4 + Low Credit Score = Danger Zone
-- Having Co-Signer Reduces Risk
+**2. Credit Score Band Risk**
+- Poor (High Risk <600), Medium (<700), Good (Low Risk)
+
+**3. Income vs Default**
+- Low (<30K), Medium (<60K), High - Using CTE
+
+**4. Risky Loan Purpose**
+- Business, Auto, Education, Home - Highest default purpose
+
+**5. High Risk Customers**
+- Filter: DTIRatio>0.4, CreditScore<650, Default=1 - Top 100
+
+**6. Employment & CoSigner Risk**
+- EmploymentType, HasCoSigner effect on default
+
+**7. Advanced SQL**
+- Window Function: `RANK() OVER(PARTITION BY Default)`
+- View Created: `Risk_Dashboard` with Risk_Category
 
 ### 🛠️ Tech Stack
-SQL Server, Power BI
+SQL Server, Power BI, SQL (CASE, CTE, CAST, RANK, VIEW)
 
-### 📁 Files
-- Loan Risk Analysis.sql
-- dashboard.png
+### 👩‍💻 Author: Sherli
