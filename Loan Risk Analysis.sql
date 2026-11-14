@@ -29,7 +29,7 @@ From Loan_default Group by
  case when Income<30000 then 'Low'
       when Income<60000 then 'Medium'
       else 'High'
-  End  as Income_band
+  End  as Income_Band
   from Loan_default)
   SELECT Income_Band, cast(avg(cast([Default] as FLOAT))*100 as DECIMAL(5,2)) as Default_Rate
   from IncomeBand 
